@@ -1,0 +1,115 @@
+﻿@using Cobbler.Models;
+@model List<Products>
+@{
+    ViewData["Title"] = "Woman";
+}
+
+
+
+ <div class="heading mx-3 my-4">
+        <h3>Woman <span>Heels</span></h3>
+        <hr>
+    </div>
+
+    <!--heel shoe starts-->
+    <section class="heel">
+        <div class="box-container">
+            @foreach(var product in Model)
+             {
+                 
+            if(product.ProductTypeId.Equals(15))
+            {
+           
+            <div class="card  bg-light mb-3">
+                <img src="~/@product.Image_Main" class="card-img-top" alt="..."
+                    onmouseover="~/@product.Image_secondary"
+                    onmouseout="/@product.Image_Main">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <div class="price">৳@product.Price <span>৳@(product.Price+500)</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                     <a asp-action="Detail" asp-controller="Home" asp-route-id="@product.Id" class="btn  btn-outline-primary">Details</a>
+                </div>
+            </div>
+            }
+           }
+         </div>
+    </section>
+    <div class="heading mx-3 my-4">
+        <h3>Womans <span>Pumpies</span></h3>
+        <hr>
+    </div>
+
+    <!--pumpies shoe starts-->
+    <section class="pumpies">
+        <div class="box-container">
+            @foreach(var product in Model)
+             {
+                 
+            if(product.ProductTypeId.Equals(16))
+            {
+           
+            <div class="card  bg-light mb-3">
+                <img src="~/@product.Image_Main" class="card-img-top" alt="..."
+                    onmouseover="~/@product.Image_secondary"
+                    onmouseout="/@product.Image_Main">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <div class="price">৳@product.Price <span>৳@(product.Price+500)</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                     <a asp-action="Detail" asp-controller="Home" asp-route-id="@product.Id" class="btn  btn-outline-primary">Details</a>
+                </div>
+            </div>
+            }
+           }
+         </div>
+    </section>
+
+    <div class="heading mx-3 my-4">
+        <h3>Womans <span>Canvas</span></h3>
+        <hr>
+    </div>
+
+    <!--Canvus shoe starts-->
+    <section class="canvas">
+        <div class="box-container">
+            @foreach(var product in Model)
+             {
+                 
+            if(product.ProductTypeId.Equals(17))
+            {
+           
+            <div class="card  bg-light mb-3">
+                <img src="~/@product.Image_Main" class="card-img-top" alt="..."
+                    onmouseover="~/@product.Image_secondary"
+                    onmouseout="/@product.Image_Main">
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <div class="price">৳@product.Price <span>৳@(product.Price+500)</span></div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                     <a asp-action="Detail" asp-controller="Home" asp-route-id="@product.Id" class="btn  btn-outline-primary">Details</a>
+                </div>
+            </div>
+            }
+           }
+         </div>
+    </section>
+

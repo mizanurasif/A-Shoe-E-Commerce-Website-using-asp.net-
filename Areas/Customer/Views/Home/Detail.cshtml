@@ -1,0 +1,95 @@
+﻿
+@model Cobbler.Models.Products
+
+@{
+    ViewData["Title"] = "Detail";
+}
+@using Cobbler.Utiliy
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+
+    List<Products> products = HttpContextAccessor.HttpContext.Session.Get<List<Products>>("products");
+    Products product = null;
+    if (products != null)
+    {
+        product = products.FirstOrDefault(c => c.Id == Model.Id);
+    }
+
+}
+
+
+<form asp-action="Detail" method="post">
+<section class="product-details container my-2 pt-2">
+    <input type="hidden" asp-for="Id"/>
+        <div class="row mt-5">
+            <div class="col-lg-5 col-md-12 col-12">
+                <img class="img-fluid w-100 pb-1 big-img" id="main-img" src="~/@Model.Image_Main" alt="">
+                <div class="small-img-group mt-1">
+                    <div class="small-img-col">
+                        <img src="~/@Model.Image_Main" width="100%" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="~/@Model.Image_secondary" width="100%" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="~/@Model.Image_extra1" width="100%" alt="" class="small-img">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="~/@Model.Image_extra2" width="100%" alt="" class="small-img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-12">
+                <h3 py-4>@Model.Name</h3>
+                <div class="price">@Model.Price <span>@Model.Price</span></div>
+                <select name="" id="" class="my-3">
+                    <option selected>Select size</option>
+                    <option>38</option>
+                    <option>39</option>
+                    <option>40</option>
+                    <option>41</option>
+                    <option>42</option>
+                </select>
+                <input type="number" class="input"value="1">
+                @if (product == null)
+                {
+                    <button type="submit" class="btn" asp-action="Detail" asp-route-id="@Model.Id">Add to Cart</button>
+                }
+                else
+                {
+                <button type="submit" class="btn " asp-action="Remove" asp-route-id="@Model.Id">Remove to Cart</button>
+                }
+                @*<input type="submit" class="btn form-control" value="Add To Cart"/>*@
+               @if(!@Model.IsAvailable)
+                {
+                <p  class="red mt-5 mb-2">Out of stock</p>
+                }
+                <h4 class="mt-5 mb-2">Product Details</h4>
+                <span>@Model.Description</span>
+            </div>
+        </div>
+    </section>
+    <</form>
+<script>
+        var Mainimg = document.getElementById('main-img');
+        var smallimg = document.getElementsByClassName('small-img');
+
+        smallimg[0].onclick = function () {
+            Mainimg.src = smallimg[0].src;
+
+        }
+        smallimg[1].onclick = function () {
+            Mainimg.src = smallimg[1].src;
+
+        }
+        smallimg[2].onclick = function () {
+            Mainimg.src = smallimg[2].src;
+
+        }
+        smallimg[3].onclick = function () {
+            Mainimg.src = smallimg[3].src;
+
+        }
+   </script>
+

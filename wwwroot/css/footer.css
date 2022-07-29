@@ -1,0 +1,150 @@
+
+    .footer {
+      background: linear-gradient(to right, #00093c, #2d0b00);
+      width: 98%;
+      position: relative;
+      color: #fff;
+      margin-left: 16px;
+      padding: 50px 16px 30px;
+      border-top-left-radius: 75px;
+      font-size: 13px;
+      line-height: 20px;
+      margin-top: 16px;
+    }
+
+    .footer .row {
+      width: 85%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-left: 20px;
+    }
+
+    .footer .col {
+      flex-basis: 25%;
+      padding: 10px;
+
+    }
+
+    .footer .col:nth-child(2),
+    col:nth-child(3) {
+      flex-basis: 20%;
+    }
+
+    .footer .logo {
+
+      width: 85px;
+      margin-bottom: 30px;
+    }
+
+    .footer .col h3 {
+
+      width: fit-content;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .footer .col p {
+
+      margin-bottom: .5rem;
+     
+    }
+
+    .footer .col .email-id {
+      width: fit-content;
+      border-bottom: 1px solid #ccc;
+      margin: 20px 0px;
+    }
+
+    .footer .col ul {
+      padding-left: 0px
+    }
+
+    .footer .col ul li {
+      list-style: none;
+      list-style-type: none;
+      margin-bottom: 12px;
+
+    }
+
+    .footer .col ul li a {
+
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .footer .col form {
+
+      padding-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 50px;
+    }
+
+    .footer .col form .far {
+      font-size: 18px;
+      margin-right: 10px;
+    }
+
+    .footer .col form input {
+      width: 100%;
+      background: transparent;
+      color: #ccc;
+      border: 0;
+      outline: none;
+    }
+
+    .footer .col form button {
+      background: transparent;
+      border: 0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .footer .col form button .fas {
+      font-size: 16px;
+      color: #ccc;
+
+    }
+
+    .footer .col .social-icon .fab {
+
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      color: #000;
+      background: #fff;
+      margin-right: 15px;
+      cursor: pointer;
+
+    }
+
+    .footer hr {
+      width: 90%;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      margin: 20px auto;
+    }
+
+    .footer .copyright {
+      text-align: center;
+    }
+
+    .footer .col .underline {
+
+      width: 100%;
+      height: 2px;
+      background-color: #ccc;
+      border-radius: 2px;
+      top: 25%;
+      left: 0;
+    }
+    .des{
+        width:60px;
+    }

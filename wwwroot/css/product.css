@@ -1,0 +1,76 @@
+﻿
+.heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 48px;
+    color: var(--black);
+    padding: 16px;
+}
+
+    .heading span {
+        text-transform: uppercase;
+        color: var(--orange);
+    }
+
+    .heading hr {
+        width: 50%;
+        border-bottom: 2px solid black;
+        margin: 20px auto;
+    }
+
+.box-container .card .card-body .btn {
+    display: inline-block;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-weight: bolder;
+    font-size: 16px;
+    color: var(--black);
+    cursor: pointer;
+    background: #fff;
+    padding: 8px 16px;
+}
+
+    .box-container .card .card-body .btn:hover {
+        background: var(--orange);
+        color: #fff;
+    }
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 16px 48px;
+}
+
+.card {
+  flex:1 1 25%;
+}
+
+.box-container .card .card-body .card-title {
+    font-size: 32px;
+}
+
+.box-container .card .card-body .price {
+    color: var(--black);
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+    .box-container .card .card-body .price span {
+        color: var(--orange);
+        font-size: 12px;
+        text-decoration: line-through;
+    }
+
+.box-container .card .card-body .stars {
+    padding-bottom: 8px;
+}
+
+    .box-container .card .card-body .stars i {
+        font-size: 12px;
+        color: var(--orange);
+    }

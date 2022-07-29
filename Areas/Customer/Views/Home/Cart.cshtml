@@ -1,0 +1,84 @@
+﻿@using Cobbler.Models
+@model List<Products>
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<section class="cart-container container my-5">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Product</td>
+                    <td>Image</td>
+                    <td>Price</td>
+                    <td>Size</td>
+                    <td>Total</td>
+                    <td>Remove</td>
+                </tr>
+            </thead>
+            <tbody>
+              @foreach(var item in Model)
+                {
+                <tr>
+                    <td>
+                        <h5>@item.Name</h5>
+                    </td>
+                    <td><img class="image-fluid"src="~/@item.Image_Main" alt=""></td>
+                    <td>
+                        <h5>@item.Price</h5>
+                    </td>
+                    <td>
+                        <select name="" id="" class="my-3">
+                    <option selected>Select size</option>
+                    <option>38</option>
+                    <option>39</option>
+                    <option>40</option>
+                    <option>41</option>
+                    <option>42</option>
+                </select></td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a asp-area="Customer" asp-action="Remove" asp-controller="Home" asp-route-id="@item.Id">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                }
+                
+            </tbody>
+        </table>
+    </section>
+
+     <section class="cart-bottom container">
+        <div class="row">
+            <div class="coupon col-lg-6 col-md-12 mb-4">
+                <div>
+                    <h5>COUPON</h5>
+                    <p>Enter your coupon if you have one</p>
+                    <input type="text" placeholder="Coupon Code">
+                    <button>APPLY COUPON</button>
+                </div>
+            </div>
+
+            <div class="total col-lg-6 col-md-12">
+                <div>
+                    <h5>Cart Total</h5>
+                    <div class="d-flex justify-content-between">
+                        <h6>Subtotal</h6>
+                        <p>@Model.Sum(c=>c.Price)</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h6>Shipping</h6>
+                        <p>200</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                    <h6>Total</h6>
+                    <p>@(Model.Sum(c=>c.Price)+200)</p>
+                    </div>
+                    <a class="ml-auto btn btn-info"  asp-area="Customer" asp-controller="Order" asp-action="Checkout">PROCED TO CHEAKOUT</a>
+                </div>
+            </div>
+
+    </section>
+
