@@ -13,3 +13,5 @@ Issues:
 	1.Authentication not used
 	
 	2.Add product method have issue
+ 
+Go to wiki to see ScreenShot of the webiste
